@@ -35,6 +35,7 @@ public class RegistrationCommand implements Command {
 			HttpSession session = request.getSession(true);
 			session.setAttribute("userName", user.getName());
 			session.setAttribute("userId", user.getId());
+			session.setAttribute("userRole", user.getRoles());
 
 			String mes = "RegistrationOK";
 			response.sendRedirect("Controller?command=show_news_list&page=1&info_message=" + mes);

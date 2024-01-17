@@ -1,4 +1,4 @@
-package by.news.management.dao.impl;
+ package by.news.management.dao.impl;
 
 import java.sql.Connection;
 import java.sql.Date;

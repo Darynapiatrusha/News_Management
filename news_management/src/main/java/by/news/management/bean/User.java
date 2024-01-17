@@ -11,7 +11,7 @@ public class User implements Serializable {
 	private String login;
 	private String email;
 	private String password;
-	private Roles roles = Roles.USER;
+	private Roles roles;
 	private Status status = Status.ACTIVE;
 
 	public User() {

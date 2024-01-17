@@ -3,6 +3,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
+<fmt:setLocale value="${sessionScope.local}" />
+<fmt:setBundle basename="local" var="loc" />
+<fmt:message bundle="${loc}" key="command.name.backToNewsList"
+	var="backToNewsList_command" />
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,14 +19,20 @@
 	<div class="header">
 		<c:import url="/WEB-INF/jsp/layers/header.jsp" />
 	</div>
-	<div class="main-container">
-	<div class="info-message">
-			<p>Something going wrong!</p>
+	<div style="width: 100%" class="info-message">
+		<p>УПС! Что-то пошло не так!</p>
 	</div>
+	<div class="main-container">
 		<c:import url="/WEB-INF/jsp/layers/menu.jsp" />
 	</div>
-<style>	
-	.main-container {
+	<div class="content-item-manage">
+		<p>
+			<a href="Controller?command=show_news_list&page=1"><c:out
+					value="${backToNewsList_command}" /></a>
+		</p>
+	</div>
+	<style>
+.main-container {
 	width: 100%;
 }
 
